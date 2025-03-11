@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timeless trims</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+    <link href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" rel="stylesheet"/>
+
+</head>
+<style>
+    body{
+        background-color: black;
+        display: flex;
+        
+        flex-direction: column;
+        overflow-x: hidden;
+        justify-items: center;
+        align-items: center;
+    }
+    .hero{
+        height: 100vh;
+        width: 95vw;
+        margin: 0%;
+        padding: 0;
+        display: flex;
+        background-image: url('hero-removebg.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        color: white;
+        font-family: "Playfair Display", serif;
+        font-size: 20vh;
+        font-weight: 400;
+        }
+    .banner-service{
+        height: 100vh;
+        width: 100vw;
+        margin: 0%;
+        padding: 0;
+        display: flex;
+        flex-flow: row;
+        background-color: white;
+        color: rgb(0, 0, 0);
+        font-family: "Playfair Display", serif;
+        font-size: 16vh;
+        font-weight: 400;
+    }
+    .service-banner-33{
+        height: 100%;
+        width: 33%;
+        display: flex;
+        flex-direction: column;
+        padding-top: 10vh;
+    }
+    .service-banner-1on3{
+        height: 33%;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        text-align: center;
+        
+
+    }
+    .service-banner-1on3:hover{
+        height: 33%;
+        color: #e047ff;
+        
+    }
+    a{
+        color: black;
+        font-style: normal;
+        text-decoration: none;
+    }
+    .about-us{
+        display: flex;
+        margin: 0;
+        padding: 0;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100vw;
+        height: 50vh;
+        font-family: "Playfair Display", serif;
+        font-size: 10vh;
+        font-weight: 400;
+        color:white;
+    }
+    .about-us-content{
+        justify-content: center;
+        text-align: justify;
+        align-content: center;
+        font-size: large;
+        width: 50vw;
+    }
+    .footer{
+        width: 100vw;
+        height: 50vh;
+        background-image: url('/footer.svg');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .contact{
+        height: 50vh;
+        width: 50vw;
+        border-top: 1px solid white;
+        display: flex;
+        flex-direction: row;
+    }
+    .contact-50{
+        /* border-right: 1px solid white; */
+        height: 100%;
+        width: 50%;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        color: white;
+        font-family:cursive;
+        font-size: large;
+        font-weight: 400;
+    }
+
+</style>
+<body>
+
+    <div class="hero playfair-display-hero"><span style="z-index: -2; display: flex; flex-direction: column;">
+        <img src="image logo.jpeg" alt="The Logo" height="150px" width="150px" >
+        <br>
+        Timeless &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Trims 
+       
+    </span></div>
+    <div class="banner-service">
+        <div class="service-banner-33">
+            <a href="/haircut.html"><div class="service-banner-1on3">Haircut</div></a>
+            <a href="/facial.html"><div class="service-banner-1on3" style="padding-top: 10vh;">Facial</div></a>
+            <a href="/massage.html"><div class="service-banner-1on3" style="font-size: 18vh; padding-top: 7vh;">Massage</div></a>
+        </div>
+        <div><img height="100%" width="100%" src="/selena.gif"></div>
+        <div class="service-banner-33">
+            <a href=""><div class="service-banner-1on3" style="font-size: 16vh;">Eyelash</div></a>
+            <a href="/beard.html"><div class="service-banner-1on3" style="padding-top: 8vh;">Beard</div></a>
+            <a href=""><div class="service-banner-1on3"></div></a>
+        </div>
+    </div>
+    <div class="about-us">
+        <span>About Us</span>
+        <span class="about-us-content">
+            " At Timeless Trims, we are dedicated to delivering more than just a haircut—we craft personalized experiences that enhance your natural beauty and boost your confidence. Our team of skilled stylists stays up-to-date with the latest trends and techniques, ensuring that every service, from haircuts and color to treatments and styling, is tailored to your unique style and preferences. Whether you're looking for a bold transformation or a subtle refresh, we blend artistry with precision to create timeless looks that never go out of style. Step into our salon and enjoy a relaxing, rejuvenating experience where your satisfaction is our top priority. "
+
+       </span>
+    </div>
+    <div class="contact">
+        <div class="contact-50">
+            <span style="scale: 2;"> Contact Us</span><br><br>
+            <span> India</span> <span>  +91 76287262876</span>
+            <span>info@timelesstrims.com</span>
+            <span><a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f" style="color: white;"></i></a> <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter" style="color: white;"></i></a> <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram" style="color: white;"></i></a> <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in" style="color: white;"></i></a>
+            </span>
+        </div>
+        <div class="contact-50" >
+            <iframe width="425" height="350" src="https://www.openstreetmap.org/export/embed.html?bbox=76.1866718530655%2C20.434050111574212%2C76.19169294834137%2C20.437503525799823&amp;layer=cyclemap" style="border: 1px solid black"></iframe><br/><small><a href="https://www.openstreetmap.org/#map=18/20.435777/76.189182&amp;layers=C">View Larger Map</a></small>        
+            </div>
+    </div>
+    <div class="footer"></div>
+
+</body>
+</html>

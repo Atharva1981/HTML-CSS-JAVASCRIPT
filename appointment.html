@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book an Appointment</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-image: url('ask2.jpg');
+            background-color: black;
+            font-family: "Playfair Display", serif;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .appointment-form {
+            background-color: #333; /* Dark background for the form */
+            padding: 60px; /* Increase padding for larger form */
+            border-radius: 8px;
+            color: white; /* White text */
+            font-size: large;
+            font-weight: 400;
+            width: 40%; /* Increase width to make the form bigger */
+        }
+
+        .appointment-form label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .appointment-form input, .appointment-form select {
+            width: 100%;
+            padding: 15px; /* Larger input fields */
+            margin-bottom: 20px;
+            background-color: #222; /* Darker background for input fields */
+            color: white; /* White text for inputs */
+            border: 1px solid #555; /* Subtle border color */
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        .appointment-form button {
+            background-color: #e047ff;
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 18px;
+        }
+
+        .appointment-form button:hover {
+            background-color: #d036e1;
+        }
+
+        .appointment-form input::placeholder {
+            color: #bbb; /* Placeholder text color */
+        }
+    </style>
+</head>
+<body>
+
+<div class="appointment-form">
+    <form id="appointmentForm" onsubmit="return validateForm()">
+        <center><label for="Timeless Trims" style="scale: 2;">Appointment</label></center>
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" pattern="[+0-9 ]{10,15}" placeholder="+91XXXXXXXXXX" required>
+
+        <label for="service">Select Service</label>
+        <select id="service" name="service" required>
+            <option value="" disabled selected>Select a service</option>
+            <option value="Haircut">Haircut</option>
+            <option value="Facial">Facial</option>
+            <option value="Massage">Massage</option>
+            <option value="Beard">Beard</option>
+        </select>
+
+        <label for="appointmentDate">Appointment Date</label>
+        <input type="date" id="appointmentDate" name="appointmentDate" required>
+
+        <label for="appointmentTime">Appointment Time</label>
+        <input type="time" id="appointmentTime" name="appointmentTime" required>
+
+        <label for="remark">Remark</label>
+        <input type="text" id="remark" name="remark">
+
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+<script>
+    function validateForm() {
+        const phone = document.getElementById('phone').value;
+        const appointmentDate = document.getElementById('appointmentDate').value;
+        const currentDate = new Date();
+        const selectedDate = new Date(appointmentDate);
+
+        // Phone number validation
+        const phonePattern = /^[+0-9 ]{10,15}$/;
+        if (!phone.match(phonePattern)) {
+            alert('Please enter a valid phone number.');
+            return false;
+        }
+
+        // Date validation - should not be more than 3 months from now
+        const maxDate = new Date();
+        maxDate.setMonth(currentDate.getMonth() + 3);
+        if (selectedDate > maxDate || selectedDate < currentDate) {
+            alert('Please select a date within the next 3 months.');
+            return false;
+        }
+
+        // On successful validation, redirect to the form_submitted page
+        window.location.href = "form_submitted.html";
+        return false;
+    }
+</script>
+
+</body>
+</html>
